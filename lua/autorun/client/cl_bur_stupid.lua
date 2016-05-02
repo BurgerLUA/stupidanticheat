@@ -33,8 +33,8 @@ function SAC_AnalyzeAngles()
 	local ply = LocalPlayer()
 
 	for k,v in pairs(player.GetAll()) do
-		if v ~= LocalPlayer() then
-		
+		if v ~= ply and ply:Alive() then
+
 			local ShootPos = ply:GetShootPos()
 		
 			local Angles = ply:EyeAngles()
@@ -87,7 +87,6 @@ function SAC_AnalyzeAngles()
 		for k,v in pairs(Players) do
 			if v ~= LocalPlayer() then	
 				PlayerData[v] = v.CheaterChecks
-			
 			end
 		end
 	

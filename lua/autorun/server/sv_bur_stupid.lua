@@ -42,7 +42,7 @@ function SAC_AskForPlayersAddons(attacker,cmd,args,argStr)
 				if not SelectedPlayer then
 					local Nick = string.lower(v:Name())
 					
-					print(Nick,PlayerToFind)
+					--print(Nick,PlayerToFind)
 					
 					if string.find(Nick,PlayerToFind) then
 						SelectedPlayer = v
