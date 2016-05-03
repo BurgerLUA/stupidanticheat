@@ -57,12 +57,7 @@ function SAC_AnalyzeAngles()
 			
 			Difference01 = math.abs(Difference01.p) + math.abs(Difference01.y)
 			Difference02 = math.abs(Difference02.p) + math.abs(Difference02.y)
-			
-			--print(Difference01)
-			
-			
-			
-			
+
 			if Difference01 < Sensitivity or Difference02 < Sensitivity then
 				if not v.CheaterChecks then
 					v.CheaterChecks = 1
@@ -101,18 +96,14 @@ end
 
 net.Receive("SAC_FoldersAsk", function(len)
 
-	local Asker = net.ReadEntity()
-	
+	local Asker = net.ReadEntity()	
 	local GmodFiles, GmodFolders = file.Find('addons/*', 'GAME') 
 	
-	--print("SENDING FOLDERS TO SERVER")
-
 	net.Start("SAC_FoldersSend")
 		net.WriteEntity(Asker)
 		net.WriteTable(GmodFiles)
 		net.WriteTable(GmodFolders)
 	net.SendToServer()
-
 
 end)
 

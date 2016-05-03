@@ -89,19 +89,13 @@ net.Receive("SAC_FoldersSend", function(len,ply)
 	local Attacker = net.ReadEntity()
 	local GmodFiles = net.ReadTable()
 	local GmodFolders = net.ReadTable()
-	
-	--print("GOT MY SHIT")
-	
+
 	net.Start("SAC_FoldersFinal")
 		net.WriteEntity(Victim)
 		net.WriteTable(GmodFiles)
 		net.WriteTable(GmodFolders)
 	net.Send(Attacker)
 	
-	
-	--PrintTable(GmodFiles)
-	--PrintTable(GmodFolders)
-
 end)
 
 
